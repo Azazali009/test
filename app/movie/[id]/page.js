@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Comments from "../Comments";
 
 const page = async ({ params }) => {
   const id = params.id;
@@ -18,9 +19,9 @@ const page = async ({ params }) => {
   const main_data = data[0].details;
 
   return (
-    <div className=" max-w-[70rem] mx-auto py-8 text-gray-500  flex flex-col gap-6">
+    <div className=" mx-auto flex max-w-[70rem] flex-col  gap-6 py-8 text-gray-500">
       <div>
-        <h1 className=" capitalize text-red-500 text-2xl font-bold">
+        <h1 className=" text-2xl font-bold capitalize text-red-500">
           Netflix / <span className="  text-gray-500">{main_data.type}</span>
         </h1>
         <Image
@@ -34,8 +35,9 @@ const page = async ({ params }) => {
           height={300}
         />
       </div>
-      <h2 className=" text-4xl capitalize font-semibold">{main_data.title}</h2>
+      <h2 className=" text-4xl font-semibold capitalize">{main_data.title}</h2>
       <p className=" text-lg">{main_data.synopsis}</p>
+      <Comments />
     </div>
   );
 };

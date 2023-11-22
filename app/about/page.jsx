@@ -35,7 +35,6 @@ const pages = () => {
           </button>
         );
       })}
-      <Test value={value} />
     </div>
   );
 };
